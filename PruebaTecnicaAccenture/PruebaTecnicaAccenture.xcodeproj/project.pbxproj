@@ -22,6 +22,8 @@
 		B4C9C5332817184900652C4E /* MarvelListOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9C5292817184900652C4E /* MarvelListOutput.swift */; };
 		B4C9C5342817184900652C4E /* MarvelListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9C52A2817184900652C4E /* MarvelListDataManager.swift */; };
 		B4C9C53D2817190B00652C4E /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9C53C2817190B00652C4E /* Builder.swift */; };
+		B4C9C5402817198E00652C4E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9C53F2817198E00652C4E /* Coordinator.swift */; };
+		B4C9C542281719E300652C4E /* AppStartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9C541281719E300652C4E /* AppStartCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		B4C9C5292817184900652C4E /* MarvelListOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListOutput.swift; sourceTree = "<group>"; };
 		B4C9C52A2817184900652C4E /* MarvelListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListDataManager.swift; sourceTree = "<group>"; };
 		B4C9C53C2817190B00652C4E /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		B4C9C53F2817198E00652C4E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		B4C9C541281719E300652C4E /* AppStartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		B4C9C50B281715AF00652C4E /* PruebaTecnicaAccenture */ = {
 			isa = PBXGroup;
 			children = (
+				B4C9C53E2817197B00652C4E /* Coordinators */,
 				B4C9C53B2817190300652C4E /* Common */,
 				B4C9C5202817182800652C4E /* Modules */,
 				B4C9C50C281715AF00652C4E /* AppDelegate.swift */,
@@ -154,8 +159,17 @@
 			isa = PBXGroup;
 			children = (
 				B4C9C53C2817190B00652C4E /* Builder.swift */,
+				B4C9C53F2817198E00652C4E /* Coordinator.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		B4C9C53E2817197B00652C4E /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				B4C9C541281719E300652C4E /* AppStartCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4C9C5402817198E00652C4E /* Coordinator.swift in Sources */,
 				B4C9C52D2817184900652C4E /* MarvelListViewControllerProtocol.swift in Sources */,
 				B4C9C52E2817184900652C4E /* MarvelListPresenterProtocol.swift in Sources */,
 				B4C9C5312817184900652C4E /* MarvelListInteractor.swift in Sources */,
@@ -238,6 +253,7 @@
 				B4C9C53D2817190B00652C4E /* Builder.swift in Sources */,
 				B4C9C50D281715AF00652C4E /* AppDelegate.swift in Sources */,
 				B4C9C5302817184900652C4E /* MarvelListBuilder.swift in Sources */,
+				B4C9C542281719E300652C4E /* AppStartCoordinator.swift in Sources */,
 				B4C9C50F281715AF00652C4E /* SceneDelegate.swift in Sources */,
 				B4C9C52C2817184900652C4E /* MarvelListPresenter.swift in Sources */,
 				B4C9C52F2817184900652C4E /* MarvelListViewController.swift in Sources */,
