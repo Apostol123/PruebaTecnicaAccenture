@@ -24,6 +24,8 @@
 		B4C9C53D2817190B00652C4E /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9C53C2817190B00652C4E /* Builder.swift */; };
 		B4C9C5402817198E00652C4E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9C53F2817198E00652C4E /* Coordinator.swift */; };
 		B4C9C542281719E300652C4E /* AppStartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9C541281719E300652C4E /* AppStartCoordinator.swift */; };
+		B4C9C54528171DD900652C4E /* DtoMarvel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9C54428171DD900652C4E /* DtoMarvel.swift */; };
+		B4C9C54828171E8A00652C4E /* ServiceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9C54728171E8A00652C4E /* ServiceProxy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		B4C9C53C2817190B00652C4E /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		B4C9C53F2817198E00652C4E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B4C9C541281719E300652C4E /* AppStartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartCoordinator.swift; sourceTree = "<group>"; };
+		B4C9C54428171DD900652C4E /* DtoMarvel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DtoMarvel.swift; sourceTree = "<group>"; };
+		B4C9C54728171E8A00652C4E /* ServiceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProxy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 		B4C9C50B281715AF00652C4E /* PruebaTecnicaAccenture */ = {
 			isa = PBXGroup;
 			children = (
+				B4C9C54628171E7D00652C4E /* Network */,
+				B4C9C54328171DBD00652C4E /* Entities */,
 				B4C9C53E2817197B00652C4E /* Coordinators */,
 				B4C9C53B2817190300652C4E /* Common */,
 				B4C9C5202817182800652C4E /* Modules */,
@@ -172,6 +178,22 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		B4C9C54328171DBD00652C4E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				B4C9C54428171DD900652C4E /* DtoMarvel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		B4C9C54628171E7D00652C4E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B4C9C54728171E8A00652C4E /* ServiceProxy.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,11 +267,13 @@
 				B4C9C5402817198E00652C4E /* Coordinator.swift in Sources */,
 				B4C9C52D2817184900652C4E /* MarvelListViewControllerProtocol.swift in Sources */,
 				B4C9C52E2817184900652C4E /* MarvelListPresenterProtocol.swift in Sources */,
+				B4C9C54828171E8A00652C4E /* ServiceProxy.swift in Sources */,
 				B4C9C5312817184900652C4E /* MarvelListInteractor.swift in Sources */,
 				B4C9C52B2817184900652C4E /* MarvelListInteractorProtocol.swift in Sources */,
 				B4C9C5322817184900652C4E /* MarvelListDataManagerProtocol.swift in Sources */,
 				B4C9C5332817184900652C4E /* MarvelListOutput.swift in Sources */,
 				B4C9C5342817184900652C4E /* MarvelListDataManager.swift in Sources */,
+				B4C9C54528171DD900652C4E /* DtoMarvel.swift in Sources */,
 				B4C9C53D2817190B00652C4E /* Builder.swift in Sources */,
 				B4C9C50D281715AF00652C4E /* AppDelegate.swift in Sources */,
 				B4C9C5302817184900652C4E /* MarvelListBuilder.swift in Sources */,
@@ -325,7 +349,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -380,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
