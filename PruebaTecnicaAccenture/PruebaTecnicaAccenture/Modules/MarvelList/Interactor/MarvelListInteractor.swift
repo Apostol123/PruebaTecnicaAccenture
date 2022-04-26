@@ -10,9 +10,20 @@ import Foundation
 
 class MarvelListInteractor: MarvelListInteractorProtocol {
     
-    var dataManager: MarvelListDataManagerProtocol
+    private var dataManager: MarvelListDataManagerProtocol
 
     init(dataManager: MarvelListDataManagerProtocol) {
         self.dataManager = dataManager
+    }
+    
+    func getMarvelItems(completion: @escaping (Result<DtoMarvel, Error>) -> Void) {
+        dataManager.getMarvelItems { result in
+            switch result {
+            case .success(let data):
+                completion(.success(data))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 }

@@ -9,9 +9,9 @@
 import Foundation
 
 class MarvelListPresenter {
-    var interactor: MarvelListInteractorProtocol
+    private var interactor: MarvelListInteractorProtocol
     weak var view: MarvelListViewProtocol?
-    var coordinatorOutput: (MarvelListOutput) -> Void
+    private var coordinatorOutput: (MarvelListOutput) -> Void
 
     init(interactor: MarvelListInteractorProtocol, coordinnatorOutput: @escaping (MarvelListOutput) -> Void) {
         self.interactor = interactor
@@ -20,5 +20,14 @@ class MarvelListPresenter {
 }
 
 extension MarvelListPresenter: MarvelListPresenterProtocol {
-    
+    func viewDidLoad() {
+        interactor.getMarvelItems { result in
+            switch result {
+            case .success(let data):
+                print(data)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }

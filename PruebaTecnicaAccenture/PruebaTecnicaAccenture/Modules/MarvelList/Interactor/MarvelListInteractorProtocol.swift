@@ -9,5 +9,5 @@
 import Foundation
 
 protocol MarvelListInteractorProtocol : AnyObject {
-
+    func getMarvelItems(completion: @escaping (Result<DtoMarvel, Error>) -> Void)
 }

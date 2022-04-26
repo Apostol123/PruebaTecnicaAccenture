@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 
 
@@ -22,50 +23,45 @@ class ServiceProxy {
     
     private let session: URLSession
     
+    private let mainUrl = "https://gateway.marvel.com:443/"
+    
     init() {
         self.session = .shared
     }
     
-    func getItem<T: Decodable>(url: String, type: T.Type, queue: DispatchQueue = .main, completion: @escaping (Result<T, APIError>) -> Void) {
-        
-        let url = URL(string: url)
-        
-        var request = URLRequest(url: url!)
-        
-        request.httpMethod  = "GET"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        let task = session.dataTask(with: request) { (data, response, error) in
+    func getItem<T: Decodable>(url: String, type: T.Type, parameters: [String:Any]?,headers: HTTPHeaders? = nil, queue: DispatchQueue = .main, completion: @escaping (Result<T, AFError>) -> Void) {
+        let url = "\(mainUrl)\(url)"
+        let request =  AF.request(url, method: .get, parameters: parameters, headers: headers)
+        .validate()
+        .responseDecodable(of: T.self, queue: queue) { (response) in
+            print("IN<---------------------------------------")
+            if let HTTPresponse = response.response {
+                // Debug
+                print(HTTPresponse)
+            } else {
+                print(response)
+            }
+            print("IN<---------------------------------------")
             
-            if let error = error {
-                completion(.failure(.system(error)))
-                return
+            if let data = response.data {
+                print("Response: \(String(data: data, encoding: .utf8) ?? "")")
             }
             
-            guard let httpResponse = response as? HTTPURLResponse else {
-                completion(.failure(.invalidResponse))
-                return
-            }
-            
-            switch httpResponse.statusCode {
-            case 404:
-                completion(.failure(.notFound))
-                
-            case 200:
-                if let data = data {
-                    let decoder = JSONDecoder()
-                    if let resource = try? decoder.decode(type, from: data) {
-                        completion(.success(resource))
-                    } else {
-                        completion(.failure(.unableToDecode("\(T.self)")))
-                    }
-                } else {
-                    completion(.failure(.emptyResponse))
-                }
-            default:
-                completion(.failure(.undefined("status code: \(httpResponse.statusCode)")))
+            switch response.result {
+            case .success(let result):
+                completion(.success(result))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
         
-        task.resume()
+        if request.isInitialized {
+            request.cURLDescription(calling: { (description) in
+                print("OUT----------------------------->")
+                print("Curl Description \(description)")
+                print("--------------------------------->")
+            })
+            
+        }
     }
 }

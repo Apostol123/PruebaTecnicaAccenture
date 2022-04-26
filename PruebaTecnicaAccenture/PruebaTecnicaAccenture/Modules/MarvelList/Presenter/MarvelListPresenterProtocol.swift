@@ -9,5 +9,5 @@
 import Foundation
 
 protocol MarvelListPresenterProtocol: AnyObject {
-    
+    func viewDidLoad()
 }
