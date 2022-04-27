@@ -6,31 +6,61 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MarvelListTableViewCell: UITableViewCell {
     
-    private lazy var avatarImage: UIImageView = {
-        let image = UIImageView()
-        image.contentMode = .scaleToFill
-        image.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        image.widthAnchor.constraint(equalToConstant: 120).isActive = true
-        return image
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.text = "Título"
+        return label
+    }()
+    
+    private lazy var titleDescription: UILabel = {
+        let label = UILabel(frame: .zero)
+        return label
+    }()
+    
+    private lazy var subtitleLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.text = "Descripción"
+        return label
     }()
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.numberOfLines = 1
+        label.numberOfLines = 3
         return label
     }()
     
-    private lazy var mainStack: UIStackView = {
-       let stackView = UIStackView(arrangedSubviews: [avatarImage, descriptionLabel])
+    private lazy var mainImage: UIImageView = {
+        let imageView = UIImageView(frame: .zero)
+        imageView.contentMode = .scaleAspectFit
+        imageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        return imageView
+    }()
+    
+    
+    private lazy var textStackView: UIStackView = {
+       let stackView = UIStackView(arrangedSubviews: [titleLabel, titleDescription, subtitleLabel, descriptionLabel])
         stackView.distribution = .fill
         stackView.alignment = .fill
-        stackView.spacing = 10
+        stackView.spacing = 8
+        stackView.axis = .vertical
         return stackView
     }()
     
+    private lazy var mainStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [mainImage, textStackView])
+        stackView.distribution = .fill
+        stackView.alignment = .center
+        stackView.axis = .horizontal
+        stackView.spacing = 12
+        return stackView
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -39,19 +69,22 @@ class MarvelListTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-    }
-    
-    func configure(description: String, imageUrl: String) {
-        self.descriptionLabel.text = description
+        commonInit()
     }
     
     private func commonInit() {
-        self.selectionStyle = .none
-        self.contentView.addSubview(mainStack)
-        mainStack.translatesAutoresizingMaskIntoConstraints = false
-        mainStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
-        mainStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
-        mainStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
-        mainStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        contentView.addSubview(mainStackView)
+        mainStackView.translatesAutoresizingMaskIntoConstraints = false
+        mainStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 16).isActive = true
+        mainStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -16).isActive = true
+        mainStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16).isActive = true
+        mainStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+    }
+    
+    func configure(titleDescription: String, description: String, imageURL: String) {
+        self.titleDescription.text = titleDescription
+        self.descriptionLabel.text = description
+        self.mainImage.sd_setImage(with: URL(string: imageURL), placeholderImage: nil)
+        
     }
 }

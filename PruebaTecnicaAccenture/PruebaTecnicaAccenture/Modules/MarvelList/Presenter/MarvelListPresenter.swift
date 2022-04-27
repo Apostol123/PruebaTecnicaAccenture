@@ -21,12 +21,14 @@ class MarvelListPresenter {
 
 extension MarvelListPresenter: MarvelListPresenterProtocol {
     func viewDidLoad() {
+        view?.showLoader()
         interactor.getMarvelItems { result in
             switch result {
-            case .success(let data):
-                print(data)
-            case .failure(let error):
-                print(error)
+            case .success(let dtoMarvel):
+                self.view?.showData(data: dtoMarvel.data?.results ?? [])
+                self.view?.hideLoader()
+            case .failure(_):
+                self.view?.hideLoader()
             }
         }
     }

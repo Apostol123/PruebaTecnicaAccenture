@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol MarvelListViewProtocol: AnyObject {
-    
+protocol MarvelListViewProtocol: AnyObject, Loader {
+    func showData(data: [Character])
 }

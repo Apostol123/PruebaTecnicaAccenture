@@ -6,5 +6,6 @@ target 'PruebaTecnicaAccenture' do
   use_frameworks!
 
   # Pods for PruebaTecnicaAccenture
-  pod 'Alamofire', '~> 5.4'
+  pod 'Alamofire', '~> 5.4' 
+  pod 'SDWebImage', '~> 5.0'
 end

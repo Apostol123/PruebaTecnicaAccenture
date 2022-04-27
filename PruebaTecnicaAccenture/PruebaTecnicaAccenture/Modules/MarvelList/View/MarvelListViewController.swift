@@ -11,6 +11,13 @@ import UIKit
 class MarvelListViewController: UIViewController {
     
     let presenter: MarvelListPresenterProtocol
+    private var content: [Character] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     private lazy var tableView: UITableView = {
         let view = UITableView(frame: .zero)
@@ -51,16 +58,22 @@ class MarvelListViewController: UIViewController {
 }
 
 extension MarvelListViewController: MarvelListViewProtocol{
-    // TODO: Implement View Output Methods
+    func showData(data: [Character]) {
+        self.content = data
+    }
 }
 
 extension MarvelListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        content.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = content[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MarvelListTableViewCell.self), for: indexPath) as?  MarvelListTableViewCell else {return UITableViewCell()}
+        let imagePath = item.thumbnail?.path ?? ""
+        let imageExtension = item.thumbnail?.thumbnailExtension?.rawValue ?? ""
+        cell.configure(titleDescription: item.name ?? "", description: item.resultDescription ?? "", imageURL: imagePath+"."+imageExtension)
         return cell
     }
     

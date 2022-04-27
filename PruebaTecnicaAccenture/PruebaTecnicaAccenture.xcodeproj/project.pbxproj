@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		943D9242BFEBAF96A9A4000A /* Pods_PruebaTecnicaAccenture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665C557173A2C607CE0D5868 /* Pods_PruebaTecnicaAccenture.framework */; };
 		B412222E281893E50021D1D8 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B412222D281893E50021D1D8 /* String+Extensions.swift */; };
+		B4535C582819E22300CF3FA7 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4535C572819E22300CF3FA7 /* Loader.swift */; };
 		B4C9C50D281715AF00652C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9C50C281715AF00652C4E /* AppDelegate.swift */; };
 		B4C9C50F281715AF00652C4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9C50E281715AF00652C4E /* SceneDelegate.swift */; };
 		B4C9C516281715B100652C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4C9C515281715B100652C4E /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		5A134E68AD55886C512430BF /* Pods-PruebaTecnicaAccenture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaTecnicaAccenture.release.xcconfig"; path = "Target Support Files/Pods-PruebaTecnicaAccenture/Pods-PruebaTecnicaAccenture.release.xcconfig"; sourceTree = "<group>"; };
 		665C557173A2C607CE0D5868 /* Pods_PruebaTecnicaAccenture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PruebaTecnicaAccenture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B412222D281893E50021D1D8 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		B4535C572819E22300CF3FA7 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		B4C9C509281715AF00652C4E /* PruebaTecnicaAccenture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PruebaTecnicaAccenture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4C9C50C281715AF00652C4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4C9C50E281715AF00652C4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +84,6 @@
 				DDE3D602223891CEA6D34716 /* Pods-PruebaTecnicaAccenture.debug.xcconfig */,
 				5A134E68AD55886C512430BF /* Pods-PruebaTecnicaAccenture.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -97,6 +98,7 @@
 		B412222C281893D70021D1D8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B4535C572819E22300CF3FA7 /* Loader.swift */,
 				B412222D281893E50021D1D8 /* String+Extensions.swift */,
 			);
 			path = Utils;
@@ -401,6 +403,7 @@
 				B4C9C5312817184900652C4E /* MarvelListInteractor.swift in Sources */,
 				B4C9C52B2817184900652C4E /* MarvelListInteractorProtocol.swift in Sources */,
 				B4C9C5322817184900652C4E /* MarvelListDataManagerProtocol.swift in Sources */,
+				B4535C582819E22300CF3FA7 /* Loader.swift in Sources */,
 				B4C9C5332817184900652C4E /* MarvelListOutput.swift in Sources */,
 				B4C9C5342817184900652C4E /* MarvelListDataManager.swift in Sources */,
 				B4C9C54528171DD900652C4E /* DtoMarvel.swift in Sources */,
