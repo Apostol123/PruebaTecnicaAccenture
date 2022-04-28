@@ -42,6 +42,7 @@ class MarvelListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        self.title = presenter.getlabelForKey(key: "lng.listVC.title")
         setUpTableViewLayout()
         presenter.viewDidLoad()
     }

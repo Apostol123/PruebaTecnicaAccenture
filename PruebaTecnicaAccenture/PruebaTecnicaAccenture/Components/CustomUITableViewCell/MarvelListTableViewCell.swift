@@ -8,12 +8,12 @@
 import UIKit
 import SDWebImage
 
-class MarvelListTableViewCell: UITableViewCell {
+class MarvelListTableViewCell: UITableViewCell, GetLabel {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.text = "Título"
+        label.text = getlabelForKey(key: "lng.common.title")
         return label
     }()
     
@@ -25,7 +25,7 @@ class MarvelListTableViewCell: UITableViewCell {
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.text = "Descripción"
+        label.text = getlabelForKey(key: "lng.common.description")
         return label
     }()
     

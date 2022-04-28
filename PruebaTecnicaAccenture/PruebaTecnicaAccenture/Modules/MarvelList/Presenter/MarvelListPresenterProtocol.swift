@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol MarvelListPresenterProtocol: AnyObject {
+protocol MarvelListPresenterProtocol: AnyObject, GetLabel {
     func viewDidLoad()
 }

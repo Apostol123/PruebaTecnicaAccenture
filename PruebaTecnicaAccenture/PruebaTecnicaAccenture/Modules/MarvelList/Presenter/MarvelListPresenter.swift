@@ -20,6 +20,7 @@ class MarvelListPresenter {
 }
 
 extension MarvelListPresenter: MarvelListPresenterProtocol {
+
     func viewDidLoad() {
         view?.showLoader()
         interactor.getMarvelItems { result in
