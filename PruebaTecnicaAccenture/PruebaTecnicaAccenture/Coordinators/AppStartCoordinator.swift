@@ -13,6 +13,8 @@ class AppStartCoordinator: Coordinator {
     enum MainCoordinatorState {
         case initial
         case willShowListFlow
+        case didShowMarvelList
+        case willShowCharacterDetaill
     }
     
     private var state: MainCoordinatorState
@@ -31,7 +33,9 @@ class AppStartCoordinator: Coordinator {
         switch  self.state {
         case .willShowListFlow:
             goToListFlow()
-        case .initial:
+        case .willShowCharacterDetaill:
+            buildCharacterDetailModule() 
+        case .initial, .didShowMarvelList:
             fatalError("Unexpected Case in Main Coordinator")
         }
     }
@@ -40,17 +44,31 @@ class AppStartCoordinator: Coordinator {
         switch nextState {
         case .initial:
             return .willShowListFlow
-        case .willShowListFlow:
+        case .didShowMarvelList:
+            return .willShowCharacterDetaill
+        case .willShowListFlow, .willShowCharacterDetaill:
             return nextState
-       
         }
     }
     
     
     private func goToListFlow() {
-        let vc = MarvelListBuilder { _ in
+        let vc = MarvelListBuilder { output in
+            
+            switch output {
+            case .goToCharacterDetail:
+                self.state = .didShowMarvelList
+                self.loop()
+            }
             
         }.build()
         self.navigator.setViewControllers([vc], animated: true)
+    }
+    
+    private func buildCharacterDetailModule() {
+        let vc = MarvelCharacterDetailBuilder { _ in
+            
+        }.build()
+        self.navigator.pushViewController(vc, animated: true)
     }
 }

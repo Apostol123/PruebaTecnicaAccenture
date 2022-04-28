@@ -79,6 +79,7 @@ class MarvelListTableViewCell: UITableViewCell, GetLabel {
         mainStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -16).isActive = true
         mainStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16).isActive = true
         mainStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        self.selectionStyle = .none
     }
     
     func configure(titleDescription: String, description: String, imageURL: String) {

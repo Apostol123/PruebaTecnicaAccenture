@@ -8,3 +8,4 @@
 "lng.listVC.title" = "Personajes";
 "lng.common.description" = "Descripción";
 "lng.common.title" = "Título";
+"lng.character.detail.title" = "Detalle de %";

@@ -9,3 +9,4 @@
 "lng.listVC.title" = "Character List";
 "lng.common.description" = "Description";
 "lng.common.title" = "Title";
+"lng.character.detail.title" = "Detalle of %";

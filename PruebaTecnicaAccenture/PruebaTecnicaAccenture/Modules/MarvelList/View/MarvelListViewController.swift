@@ -78,5 +78,10 @@ extension MarvelListViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = content[indexPath.row]
+        self.presenter.goToCharacterDetail()
+    }
+    
     
 }

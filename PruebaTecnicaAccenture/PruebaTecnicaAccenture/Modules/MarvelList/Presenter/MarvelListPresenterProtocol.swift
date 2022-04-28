@@ -10,4 +10,5 @@ import Foundation
 
 protocol MarvelListPresenterProtocol: AnyObject, GetLabel {
     func viewDidLoad()
+    func goToCharacterDetail()
 }
