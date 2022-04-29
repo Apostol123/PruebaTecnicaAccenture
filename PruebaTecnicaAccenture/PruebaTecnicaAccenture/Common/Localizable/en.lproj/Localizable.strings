@@ -11,3 +11,7 @@
 "lng.common.title" = "Title";
 "lng.character.detail.title" = "Detalle of %";
 "lng.common.name" = "Name";
+"lng.common.stories" = "Stories";
+"lng.common.comics" = "Comics";
+"lng.common.series" = "Series";
+

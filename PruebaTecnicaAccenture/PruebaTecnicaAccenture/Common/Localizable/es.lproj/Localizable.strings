@@ -10,3 +10,6 @@
 "lng.common.title" = "Título";
 "lng.character.detail.title" = "Detalle de %";
 "lng.common.name" = "Nombre";
+"lng.common.stories" = "Cuentos";
+"lng.common.comics" = "Historietas";
+"lng.common.series" = "Serie";
