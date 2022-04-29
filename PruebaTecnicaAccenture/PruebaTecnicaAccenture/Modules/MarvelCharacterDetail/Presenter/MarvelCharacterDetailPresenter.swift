@@ -9,16 +9,27 @@
 import Foundation
 
 class MarvelCharacterDetailPresenter {
-    var interactor: MarvelCharacterDetailInteractorProtocol
+    private var interactor: MarvelCharacterDetailInteractorProtocol
     weak var view: MarvelCharacterDetailViewProtocol?
-    var coordinatorOutput: (MarvelCharacterDetailOutput) -> Void
+    private var coordinatorOutput: (MarvelCharacterDetailOutput) -> Void
+    private let character: Character
 
-    init(interactor: MarvelCharacterDetailInteractorProtocol, coordinnatorOutput: @escaping (MarvelCharacterDetailOutput) -> Void) {
+    init(character: Character, interactor: MarvelCharacterDetailInteractorProtocol, coordinnatorOutput: @escaping (MarvelCharacterDetailOutput) -> Void) {
+        self.character = character
         self.interactor = interactor
         self.coordinatorOutput = coordinnatorOutput
     }
 }
 
 extension MarvelCharacterDetailPresenter: MarvelCharacterDetailPresenterProtocol {
+    var charcterImageURL: String {
+        let imagePath = marvelCharacter.thumbnail?.path ?? ""
+        let imageExtension = marvelCharacter.thumbnail?.thumbnailExtension?.rawValue ?? ""
+        let imageURL = imagePath+"."+imageExtension
+        return imageURL
+    }
     
+    var marvelCharacter: Character {
+        return character
+    }
 }

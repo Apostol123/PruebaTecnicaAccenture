@@ -34,7 +34,7 @@ extension MarvelListPresenter: MarvelListPresenterProtocol {
         }
     }
     
-    func goToCharacterDetail() {
-        coordinatorOutput(.goToCharacterDetail)
+    func goToCharacterDetail(character: Character) {
+        coordinatorOutput(.goToCharacterDetail(character: character))
     }
 }

@@ -9,5 +9,5 @@
 import Foundation
 
 enum MarvelListOutput {
-    case goToCharacterDetail
+    case goToCharacterDetail(character: Character)
 }

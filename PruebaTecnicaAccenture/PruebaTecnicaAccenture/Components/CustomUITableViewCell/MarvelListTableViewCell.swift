@@ -13,7 +13,7 @@ class MarvelListTableViewCell: UITableViewCell, GetLabel {
     private lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.text = getlabelForKey(key: "lng.common.title")
+        label.text = getlabelForKey(key: "lng.common.name")
         return label
     }()
     
@@ -84,8 +84,9 @@ class MarvelListTableViewCell: UITableViewCell, GetLabel {
     
     func configure(titleDescription: String, description: String, imageURL: String) {
         self.titleDescription.text = titleDescription
-        self.descriptionLabel.text = description
-        self.mainImage.sd_setImage(with: URL(string: imageURL), placeholderImage: nil)
+        descriptionLabel.text = description
+        subtitleLabel.isHidden = description.isEmpty
+        mainImage.sd_setImage(with: URL(string: imageURL), placeholderImage: nil)
         
     }
 }

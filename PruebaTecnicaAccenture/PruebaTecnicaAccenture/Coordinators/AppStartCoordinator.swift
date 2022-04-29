@@ -13,8 +13,8 @@ class AppStartCoordinator: Coordinator {
     enum MainCoordinatorState {
         case initial
         case willShowListFlow
-        case didShowMarvelList
-        case willShowCharacterDetaill
+        case didShowMarvelList(character: Character)
+        case willShowCharacterDetaill(character: Character)
     }
     
     private var state: MainCoordinatorState
@@ -33,8 +33,8 @@ class AppStartCoordinator: Coordinator {
         switch  self.state {
         case .willShowListFlow:
             goToListFlow()
-        case .willShowCharacterDetaill:
-            buildCharacterDetailModule() 
+        case .willShowCharacterDetaill(let character):
+            buildCharacterDetailModule(character: character)
         case .initial, .didShowMarvelList:
             fatalError("Unexpected Case in Main Coordinator")
         }
@@ -44,8 +44,8 @@ class AppStartCoordinator: Coordinator {
         switch nextState {
         case .initial:
             return .willShowListFlow
-        case .didShowMarvelList:
-            return .willShowCharacterDetaill
+        case .didShowMarvelList(let character):
+            return .willShowCharacterDetaill(character: character)
         case .willShowListFlow, .willShowCharacterDetaill:
             return nextState
         }
@@ -56,8 +56,8 @@ class AppStartCoordinator: Coordinator {
         let vc = MarvelListBuilder { output in
             
             switch output {
-            case .goToCharacterDetail:
-                self.state = .didShowMarvelList
+            case .goToCharacterDetail(let character):
+                self.state = .didShowMarvelList(character: character)
                 self.loop()
             }
             
@@ -65,8 +65,8 @@ class AppStartCoordinator: Coordinator {
         self.navigator.setViewControllers([vc], animated: true)
     }
     
-    private func buildCharacterDetailModule() {
-        let vc = MarvelCharacterDetailBuilder { _ in
+    private func buildCharacterDetailModule(character: Character) {
+        let vc = MarvelCharacterDetailBuilder(character: character) { _ in
             
         }.build()
         self.navigator.pushViewController(vc, animated: true)

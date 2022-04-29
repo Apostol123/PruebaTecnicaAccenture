@@ -80,7 +80,7 @@ extension MarvelListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = content[indexPath.row]
-        self.presenter.goToCharacterDetail()
+        self.presenter.goToCharacterDetail(character: item)
     }
     
     
