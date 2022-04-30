@@ -33,6 +33,11 @@ class MarvelCharacterDetailViewController: UIViewController {
     
     private var seriesContent: [ComicsItem] = []
     
+    private lazy var noDataView: NoDataView = {
+        let view = NoDataView(frame: .zero)
+        return view
+    }()
+    
     private lazy var segmentControll: UISegmentedControl = {
         let segment = UISegmentedControl(frame: .zero)
         segment.heightAnchor.constraint(equalToConstant: 40).isActive = true
@@ -93,7 +98,7 @@ class MarvelCharacterDetailViewController: UIViewController {
         storiesContent = presenter.marvelCharacter.stories?.items ?? []
         comisContent = presenter.marvelCharacter.comics?.items ?? []
         seriesContent = presenter.marvelCharacter.series?.items ?? []
-        setUpTableViewLayout()
+        controllSegmentDataLayout()
     }
     
     private func setUpCharacterViewLayout() {
@@ -121,7 +126,31 @@ class MarvelCharacterDetailViewController: UIViewController {
         segmentControll.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 24).isActive = true
     }
     
+    private func controllSegmentDataLayout() {
+        switch currentSegmentSelected {
+        case .stories:
+            storiesContent.count == 0 ? setUpNoDataViewLayout() : setUpTableViewLayout()
+        case .series:
+            seriesContent.count == 0 ? setUpNoDataViewLayout() : setUpTableViewLayout()
+        case .comics:
+            comisContent.count == 0 ? setUpNoDataViewLayout() : setUpTableViewLayout()
+        }
+    }
+    
+    private func setUpNoDataViewLayout() {
+        tableView.removeFromSuperview()
+        noDataView.removeFromSuperview()
+        view.addSubview(noDataView)
+        noDataView.translatesAutoresizingMaskIntoConstraints = false
+        noDataView.topAnchor.constraint(equalTo: segmentControll.bottomAnchor, constant: 16).isActive = true
+        noDataView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+        noDataView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+        noDataView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+    
     private func setUpTableViewLayout() {
+        noDataView.removeFromSuperview()
+        tableView.removeFromSuperview()
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: segmentControll.bottomAnchor, constant: 16).isActive = true
@@ -140,10 +169,13 @@ extension MarvelCharacterDetailViewController: UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch currentSegmentSelected {
         case .stories:
+            controllSegmentDataLayout()
             return storiesContent.count
         case .series:
+            controllSegmentDataLayout()
             return seriesContent.count
         case .comics:
+            controllSegmentDataLayout()
             return comisContent.count
         }
     }
