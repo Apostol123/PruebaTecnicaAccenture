@@ -9,5 +9,5 @@
 import Foundation
 
 protocol MarvelCharacterDetailDataManagerProtocol : AnyObject {
-
+    func getMarvelItems(id: String, completion: @escaping (Result<DtoMarvel, Error>) -> Void)
 }

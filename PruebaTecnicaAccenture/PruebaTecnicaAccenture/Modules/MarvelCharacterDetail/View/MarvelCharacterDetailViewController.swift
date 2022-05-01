@@ -45,7 +45,6 @@ class MarvelCharacterDetailViewController: UIViewController {
         segment.insertSegment(withTitle: presenter.getlabelForKey(key: "lng.common.series"), at: 1, animated: true)
         segment.insertSegment(withTitle: presenter.getlabelForKey(key: "lng.common.comics"), at: 2, animated: true)
         segment.addTarget(self, action: #selector(didTapSegment), for: .valueChanged)
-        segment.selectedSegmentIndex = 0
         return segment
     }()
     
@@ -61,14 +60,12 @@ class MarvelCharacterDetailViewController: UIViewController {
     private lazy var characterImage: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
-        view.sd_setImage(with: URL(string: presenter.charcterImageURL), placeholderImage: nil)
         return view
     }()
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.numberOfLines = 0
-        label.text = presenter.marvelCharacter.resultDescription
         return label
     }()
     
@@ -91,14 +88,10 @@ class MarvelCharacterDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        self.title = presenter.getlabelForKey(key: "lng.character.detail.title").replacingOccurrences(of: "%", with: presenter.marvelCharacter.name ?? "")
         setUpCharacterViewLayout()
         setUpDescriptionLabelLayout()
         setUpSegmentControllerLayout()
-        storiesContent = presenter.marvelCharacter.stories?.items ?? []
-        comisContent = presenter.marvelCharacter.comics?.items ?? []
-        seriesContent = presenter.marvelCharacter.series?.items ?? []
-        controllSegmentDataLayout()
+        presenter.viewDidLoad()
     }
     
     private func setUpCharacterViewLayout() {
@@ -159,10 +152,26 @@ class MarvelCharacterDetailViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
+    private func setUpImageViewImage(character: Character) {
+        let imagePath = character.thumbnail?.path ?? ""
+        let imageExtension = character.thumbnail?.thumbnailExtension?.rawValue ?? ""
+        let imageURL = imagePath+"."+imageExtension
+        characterImage.sd_setImage(with: URL(string: imageURL), placeholderImage: nil)
+    }
+    
 }
 
 extension MarvelCharacterDetailViewController: MarvelCharacterDetailViewProtocol{
-    // TODO: Implement View Output Methods
+    func showData(_ character: Character) {
+        storiesContent = character.stories?.items ?? []
+        comisContent = character.comics?.items ?? []
+        seriesContent = character.series?.items ?? []
+        self.title = presenter.getlabelForKey(key: "lng.character.detail.title").replacingOccurrences(of: "%", with: character.name ?? "")
+        segmentControll.selectedSegmentIndex = 0
+        descriptionLabel.text = character.resultDescription ?? ""
+        setUpImageViewImage(character: character)
+        controllSegmentDataLayout()
+    }
 }
 
 extension MarvelCharacterDetailViewController: UITableViewDataSource, UITableViewDelegate {

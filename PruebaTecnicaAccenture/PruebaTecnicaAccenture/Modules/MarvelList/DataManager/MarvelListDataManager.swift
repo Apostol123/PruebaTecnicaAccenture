@@ -12,11 +12,7 @@ class MarvelListDataManager: MarvelListDataManagerProtocol {
     private let serviceProxy = ServiceProxy()
     
     func getMarvelItems(completion: @escaping (Result<DtoMarvel, Error>) -> Void) {
-        let timestamp = "\(Date().timeIntervalSince1970)"
-        let hash = "\(timestamp)\( Constants.privateApiKey)\(Constants.apiKey)".MD5
-        
-        let params = ["hash": hash , "apikey": Constants.apiKey, "ts": timestamp]
-        serviceProxy.getItem(url: Endpoint.getCharacters.rawValue, type: DtoMarvel.self, parameters: params) { result in
+        serviceProxy.getItem(url: Endpoint.getCharacters.rawValue, type: DtoMarvel.self, parameters: AppManager.sharedInstance.buildParams()) { result in
             switch result {
             case .success(let data):
                 completion(.success(data))

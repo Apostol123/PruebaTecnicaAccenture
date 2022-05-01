@@ -22,14 +22,18 @@ class MarvelCharacterDetailPresenter {
 }
 
 extension MarvelCharacterDetailPresenter: MarvelCharacterDetailPresenterProtocol {
-    var charcterImageURL: String {
-        let imagePath = marvelCharacter.thumbnail?.path ?? ""
-        let imageExtension = marvelCharacter.thumbnail?.thumbnailExtension?.rawValue ?? ""
-        let imageURL = imagePath+"."+imageExtension
-        return imageURL
-    }
-    
-    var marvelCharacter: Character {
-        return character
+  
+    func viewDidLoad() {
+        view?.showLoader()
+        interactor.getMarvelItems(id: "\(character.id ?? 0)") { result in
+            switch result {
+            case .success(let dtoMarvel):
+                guard let characters = dtoMarvel.data?.results else {return}
+                self.view?.showData(characters[0])
+                self.view?.hideLoader()
+            case .failure(_):
+                self.view?.hideLoader()
+            }
+        }
     }
 }

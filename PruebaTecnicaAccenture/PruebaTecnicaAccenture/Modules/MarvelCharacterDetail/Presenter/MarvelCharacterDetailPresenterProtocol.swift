@@ -9,6 +9,5 @@
 import Foundation
 
 protocol MarvelCharacterDetailPresenterProtocol: AnyObject, GetLabel {
-    var marvelCharacter: Character {get}
-    var charcterImageURL: String {get}
+    func viewDidLoad()
 }
