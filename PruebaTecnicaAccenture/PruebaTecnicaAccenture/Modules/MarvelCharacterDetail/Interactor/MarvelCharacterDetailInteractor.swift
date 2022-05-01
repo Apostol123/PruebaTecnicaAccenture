@@ -16,8 +16,8 @@ class MarvelCharacterDetailInteractor: MarvelCharacterDetailInteractorProtocol {
         self.dataManager = dataManager
     }
     
-    func getMarvelItems(id: String, completion: @escaping (Result<DtoMarvel, Error>) -> Void) {
-        dataManager.getMarvelItems(id: id) { result in
+    func getMarvelCharacter(id: String, completion: @escaping (Result<DtoMarvel, Error>) -> Void) {
+        dataManager.getMarvelCharacter(id: id) { result in
             switch result {
             case .success(let data):
                 completion(.success(data))

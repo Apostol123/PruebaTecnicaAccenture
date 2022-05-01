@@ -11,7 +11,7 @@ import Foundation
 class MarvelCharacterDetailDataManager: MarvelCharacterDetailDataManagerProtocol {
     private let serviceProxy = ServiceProxy()
     
-    func getMarvelItems(id: String, completion: @escaping (Result<DtoMarvel, Error>) -> Void) {
+    func getMarvelCharacter(id: String, completion: @escaping (Result<DtoMarvel, Error>) -> Void) {
       
         serviceProxy.getItem(url: Endpoint.getCharacters.rawValue+"/"+id, type: DtoMarvel.self, parameters: AppManager.sharedInstance.buildParams()) { result in
             switch result {
@@ -23,3 +23,4 @@ class MarvelCharacterDetailDataManager: MarvelCharacterDetailDataManagerProtocol
         }
     }
 }
+

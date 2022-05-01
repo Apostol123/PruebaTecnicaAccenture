@@ -43,6 +43,7 @@ struct Character: Codable {
         case resultDescription = "description"
         case modified, thumbnail, resourceURI, comics, series, stories, events, urls
     }
+    
 }
 
 // MARK: - Comics

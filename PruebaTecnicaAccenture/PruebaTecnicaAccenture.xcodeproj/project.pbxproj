@@ -23,6 +23,8 @@
 		B4904803281B2781004DCEAB /* MarvelCharacterDetailOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49047F9281B2781004DCEAB /* MarvelCharacterDetailOutput.swift */; };
 		B4904804281B2781004DCEAB /* MarvelCharacterDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49047FA281B2781004DCEAB /* MarvelCharacterDetailDataManager.swift */; };
 		B4904815281D0C8B004DCEAB /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4904814281D0C8B004DCEAB /* NoDataView.swift */; };
+		B4904836281D7A87004DCEAB /* MarvelListMockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4904835281D7A87004DCEAB /* MarvelListMockView.swift */; };
+		B4904839281D7E55004DCEAB /* MarvelListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4904838281D7E55004DCEAB /* MarvelListPresenterTests.swift */; };
 		B4904850281E60D6004DCEAB /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B490484F281E60D6004DCEAB /* AppManager.swift */; };
 		B4C9C50D281715AF00652C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9C50C281715AF00652C4E /* AppDelegate.swift */; };
 		B4C9C50F281715AF00652C4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9C50E281715AF00652C4E /* SceneDelegate.swift */; };
@@ -46,7 +48,19 @@
 		B4C9C54D28172C3B00652C4E /* MarvelListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9C54C28172C3B00652C4E /* MarvelListTableViewCell.swift */; };
 		B4C9C55028172D9B00652C4E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9C54F28172D9B00652C4E /* Endpoint.swift */; };
 		B4C9C55328172F5300652C4E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C9C55228172F5300652C4E /* Constants.swift */; };
+		B4E3AF87281E67D100E74853 /* MarvelCharacterDetailMockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E3AF86281E67D100E74853 /* MarvelCharacterDetailMockView.swift */; };
+		B4E3AF89281E683A00E74853 /* MarvelCharacterDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E3AF88281E683A00E74853 /* MarvelCharacterDetailPresenterTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B490481E281D1033004DCEAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4C9C501281715AE00652C4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4C9C508281715AF00652C4E;
+			remoteInfo = PruebaTecnicaAccenture;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5A134E68AD55886C512430BF /* Pods-PruebaTecnicaAccenture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaTecnicaAccenture.release.xcconfig"; path = "Target Support Files/Pods-PruebaTecnicaAccenture/Pods-PruebaTecnicaAccenture.release.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +82,9 @@
 		B49047F9281B2781004DCEAB /* MarvelCharacterDetailOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterDetailOutput.swift; sourceTree = "<group>"; };
 		B49047FA281B2781004DCEAB /* MarvelCharacterDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterDetailDataManager.swift; sourceTree = "<group>"; };
 		B4904814281D0C8B004DCEAB /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
+		B490481A281D1033004DCEAB /* PruebaTecnicaAccentureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PruebaTecnicaAccentureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4904835281D7A87004DCEAB /* MarvelListMockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListMockView.swift; sourceTree = "<group>"; };
+		B4904838281D7E55004DCEAB /* MarvelListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListPresenterTests.swift; sourceTree = "<group>"; };
 		B490484F281E60D6004DCEAB /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		B4C9C509281715AF00652C4E /* PruebaTecnicaAccenture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PruebaTecnicaAccenture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4C9C50C281715AF00652C4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,10 +110,19 @@
 		B4C9C54C28172C3B00652C4E /* MarvelListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListTableViewCell.swift; sourceTree = "<group>"; };
 		B4C9C54F28172D9B00652C4E /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		B4C9C55228172F5300652C4E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B4E3AF86281E67D100E74853 /* MarvelCharacterDetailMockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterDetailMockView.swift; sourceTree = "<group>"; };
+		B4E3AF88281E683A00E74853 /* MarvelCharacterDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacterDetailPresenterTests.swift; sourceTree = "<group>"; };
 		DDE3D602223891CEA6D34716 /* Pods-PruebaTecnicaAccenture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaTecnicaAccenture.debug.xcconfig"; path = "Target Support Files/Pods-PruebaTecnicaAccenture/Pods-PruebaTecnicaAccenture.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B4904817281D1032004DCEAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4C9C506281715AF00652C4E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,10 +242,45 @@
 			path = NoDataView;
 			sourceTree = "<group>";
 		};
+		B490481B281D1033004DCEAB /* PruebaTecnicaAccentureTests */ = {
+			isa = PBXGroup;
+			children = (
+				B4E3AF85281E67B900E74853 /* MarvelCharacterDetail */,
+				B4904833281D7A63004DCEAB /* MarvelList */,
+			);
+			path = PruebaTecnicaAccentureTests;
+			sourceTree = "<group>";
+		};
+		B4904833281D7A63004DCEAB /* MarvelList */ = {
+			isa = PBXGroup;
+			children = (
+				B4904837281D7E42004DCEAB /* MarvelListPresenterTests */,
+				B4904834281D7A6E004DCEAB /* MarvelListMockView */,
+			);
+			path = MarvelList;
+			sourceTree = "<group>";
+		};
+		B4904834281D7A6E004DCEAB /* MarvelListMockView */ = {
+			isa = PBXGroup;
+			children = (
+				B4904835281D7A87004DCEAB /* MarvelListMockView.swift */,
+			);
+			path = MarvelListMockView;
+			sourceTree = "<group>";
+		};
+		B4904837281D7E42004DCEAB /* MarvelListPresenterTests */ = {
+			isa = PBXGroup;
+			children = (
+				B4904838281D7E55004DCEAB /* MarvelListPresenterTests.swift */,
+			);
+			path = MarvelListPresenterTests;
+			sourceTree = "<group>";
+		};
 		B4C9C500281715AE00652C4E = {
 			isa = PBXGroup;
 			children = (
 				B4C9C50B281715AF00652C4E /* PruebaTecnicaAccenture */,
+				B490481B281D1033004DCEAB /* PruebaTecnicaAccentureTests */,
 				B4C9C50A281715AF00652C4E /* Products */,
 				37EEDDB3D096C8FC00209E15 /* Pods */,
 				A1FC6DBEF6A7435338012C5F /* Frameworks */,
@@ -230,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				B4C9C509281715AF00652C4E /* PruebaTecnicaAccenture.app */,
+				B490481A281D1033004DCEAB /* PruebaTecnicaAccentureTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -397,9 +459,52 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		B4E3AF85281E67B900E74853 /* MarvelCharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B4E3AF8B281E684C00E74853 /* MarvelCharacterDetailPresenterTests */,
+				B4E3AF8A281E684000E74853 /* MarvelCharacterDetailMockView */,
+			);
+			path = MarvelCharacterDetail;
+			sourceTree = "<group>";
+		};
+		B4E3AF8A281E684000E74853 /* MarvelCharacterDetailMockView */ = {
+			isa = PBXGroup;
+			children = (
+				B4E3AF86281E67D100E74853 /* MarvelCharacterDetailMockView.swift */,
+			);
+			path = MarvelCharacterDetailMockView;
+			sourceTree = "<group>";
+		};
+		B4E3AF8B281E684C00E74853 /* MarvelCharacterDetailPresenterTests */ = {
+			isa = PBXGroup;
+			children = (
+				B4E3AF88281E683A00E74853 /* MarvelCharacterDetailPresenterTests.swift */,
+			);
+			path = MarvelCharacterDetailPresenterTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B4904819281D1032004DCEAB /* PruebaTecnicaAccentureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B4904820281D1033004DCEAB /* Build configuration list for PBXNativeTarget "PruebaTecnicaAccentureTests" */;
+			buildPhases = (
+				B4904816281D1032004DCEAB /* Sources */,
+				B4904817281D1032004DCEAB /* Frameworks */,
+				B4904818281D1032004DCEAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B490481F281D1033004DCEAB /* PBXTargetDependency */,
+			);
+			name = PruebaTecnicaAccentureTests;
+			productName = PruebaTecnicaAccentureTests;
+			productReference = B490481A281D1033004DCEAB /* PruebaTecnicaAccentureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B4C9C508281715AF00652C4E /* PruebaTecnicaAccenture */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4C9C51D281715B100652C4E /* Build configuration list for PBXNativeTarget "PruebaTecnicaAccenture" */;
@@ -429,6 +534,10 @@
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					B4904819281D1032004DCEAB = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = B4C9C508281715AF00652C4E;
+					};
 					B4C9C508281715AF00652C4E = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -449,11 +558,19 @@
 			projectRoot = "";
 			targets = (
 				B4C9C508281715AF00652C4E /* PruebaTecnicaAccenture */,
+				B4904819281D1032004DCEAB /* PruebaTecnicaAccentureTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B4904818281D1032004DCEAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4C9C507281715AF00652C4E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -509,6 +626,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B4904816281D1032004DCEAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4904839281D7E55004DCEAB /* MarvelListPresenterTests.swift in Sources */,
+				B4E3AF87281E67D100E74853 /* MarvelCharacterDetailMockView.swift in Sources */,
+				B4904836281D7A87004DCEAB /* MarvelListMockView.swift in Sources */,
+				B4E3AF89281E683A00E74853 /* MarvelCharacterDetailPresenterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4C9C505281715AF00652C4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -553,6 +681,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B490481F281D1033004DCEAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4C9C508281715AF00652C4E /* PruebaTecnicaAccenture */;
+			targetProxy = B490481E281D1033004DCEAB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		B49047EC281B2596004DCEAB /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -575,6 +711,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B4904821281D1033004DCEAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8DURMPUBZ2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apostol.alex.PruebaTecnicaAccentureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PruebaTecnicaAccenture.app/PruebaTecnicaAccenture";
+			};
+			name = Debug;
+		};
+		B4904822281D1033004DCEAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8DURMPUBZ2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.apostol.alex.PruebaTecnicaAccentureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PruebaTecnicaAccenture.app/PruebaTecnicaAccenture";
+			};
+			name = Release;
+		};
 		B4C9C51B281715B100652C4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -752,6 +936,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B4904820281D1033004DCEAB /* Build configuration list for PBXNativeTarget "PruebaTecnicaAccentureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4904821281D1033004DCEAB /* Debug */,
+				B4904822281D1033004DCEAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B4C9C504281715AE00652C4E /* Build configuration list for PBXProject "PruebaTecnicaAccenture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

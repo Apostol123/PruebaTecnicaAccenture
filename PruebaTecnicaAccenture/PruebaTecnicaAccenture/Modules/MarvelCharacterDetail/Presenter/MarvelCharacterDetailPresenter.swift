@@ -25,7 +25,7 @@ extension MarvelCharacterDetailPresenter: MarvelCharacterDetailPresenterProtocol
   
     func viewDidLoad() {
         view?.showLoader()
-        interactor.getMarvelItems(id: "\(character.id ?? 0)") { result in
+        interactor.getMarvelCharacter(id: "\(character.id ?? 0)") { result in
             switch result {
             case .success(let dtoMarvel):
                 guard let characters = dtoMarvel.data?.results else {return}

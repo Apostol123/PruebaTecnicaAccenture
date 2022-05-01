@@ -8,17 +8,6 @@
 import Foundation
 import Alamofire
 
-
-
-public enum APIError: Error {
-    case system(Error)
-    case undefined(String)
-    case invalidResponse
-    case notFound
-    case unableToDecode(String)
-    case emptyResponse
-}
-
 class ServiceProxy {
     
     private let session: URLSession
