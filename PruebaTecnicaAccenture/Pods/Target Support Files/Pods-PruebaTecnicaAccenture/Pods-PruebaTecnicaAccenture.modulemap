@@ -1,0 +1,6 @@
+framework module Pods_PruebaTecnicaAccenture {
+  umbrella header "Pods-PruebaTecnicaAccenture-umbrella.h"
+
+  export *
+  module * { export * }
+}
