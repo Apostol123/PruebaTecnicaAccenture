@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  PruebaTecnicaAccenture
+
+  Created by Alex Apostol on 28/4/22.
+  
+*/
+"lng.listVC.title" = "Personajes";
+"lng.common.description" = "Descripción";
+"lng.common.title" = "Título";
+"lng.character.detail.title" = "Detalle de %";
+"lng.common.name" = "Nombre";
+"lng.common.stories" = "Cuentos";
+"lng.common.comics" = "Historietas";
+"lng.common.series" = "Serie";
+"lng.common.noData" = "Sin datos";
